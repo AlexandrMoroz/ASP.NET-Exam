@@ -1,0 +1,77 @@
+﻿.dropbtn {
+    color: black;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+
+}
+.dropbtn li{
+    list-style-type: none;
+}
+.dropbtn li:before {
+    content: "\00BB \0020";
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    display: none;
+    background-color: #f9f9f9;
+    min-width: 290px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.dropdown a:hover {
+    background-color: #f1f1f1;
+}
+.link{
+	color: black;
+    text-decoration: none;
+}
+.link  a{
+    position:relative;
+    right: 0;
+    top: 0;
+    color: black;
+    text-decoration: none;
+    padding: 12px 16px;
+}
+.link  div{
+    position:relative;
+    left: 0;
+    top: 0;
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 16px;
+}
+.show {
+    display:inline-block;}
+
+.Plus {
+    background-image: url("Images/sprite.png");
+    background-position: -41px 2px;
+    background-size: 178px;
+    width: 40px;
+    margin: auto;
+    content: "";
+    height: 40px;
+    overflow: hidden;
+}
+.Plus:hover {
+    transform: rotate(90deg);
+    transition: ease 0.2s all;
+}

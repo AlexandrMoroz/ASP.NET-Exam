@@ -1,0 +1,123 @@
+﻿.center {
+    width: 500px;
+    margin: 15px auto;
+}
+.login_btn {
+    display: block;
+    height: 60px;
+    width: 55px;
+    border: 0;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer !important;
+    z-index: 200;
+    float: right;
+}
+.loginout_btn {
+    display: block;
+    float: right;
+    text-decoration: none;
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    line-height: 20px;
+    color: #fff;
+    background-color: transparent;
+    border: 0;
+}
+.loginout_btn:hover {
+    background-color: #303030;
+    color: #ddd;
+}
+.login_btn:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+    background: url(Images/sprite.png) 0 0 no-repeat;
+    background-position: -20px -78px;
+}
+.login_btn:hover {
+    background-color: #303030;
+}
+.login_block {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin: 0 0 0 -165px;
+    width: 330px;
+    background-color: #151515;
+    z-index: 10000;
+}
+.login_form {
+    margin: 17px 20px;
+}
+.login_form label {
+    color: #bbb;
+    font-size: 16px;
+    display: block;
+    margin: 0 0 10px 0;
+    line-height: 15px;
+}
+.cheak {
+    display: inline-block;
+}
+.login_form .inp {
+    width: 100%;
+    border: 1px solid transparent;
+    height: 30px;
+    background-color: #fff;
+    padding: 0 0 0 10px;
+    color: #909090;
+    font-size: 14px;
+    margin: 0 0 15px 0;
+    overflow: inherit;
+}
+
+.enter-btn {
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    background-color: #23a8f5 !important;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 2px;
+    transition: ease 0.2s all;
+
+}
+.social_login{
+    height: 95px;
+}
+.social_login label{
+    padding-left:20px;
+}
+.social_login .social_menu {
+    float: none;
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+#RememberMe{
+    float:left;
+}
+.cheak{
+    padding-left: 20px;
+}
+.enter-btn:hover {
+    opacity: 0.8;
+}
+.table-input {
+    width: 300px;
+}
+
+.table-label {
+    width: 200px;
+}
+.Regust-Area {
+    margin-top: 10px;
+}

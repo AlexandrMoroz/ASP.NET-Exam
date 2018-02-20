@@ -1,0 +1,107 @@
+﻿.menu-header {
+    height: 30px;
+    background-color: #303030;
+    line-height: 30px;
+    padding: 15px 20px;
+    font-size: 24px;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+}
+
+.menu-close:hover:before {
+    opacity: 1;
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.menu-close:before {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+    background-position: -30px -140px;
+    background-image: url("Images/sprite.png");
+  
+}
+
+.menu-close {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.9;
+    z-index: 9999;
+}
+.menu {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin: 0 0 0 -500px;
+    background-color: #151515;
+    width: 1000px;
+    z-index: 10000;
+    border-radius: 5px;
+}
+.mblock {
+    margin: 20px;
+}
+.menu-title {
+    line-height: 40px;
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    padding: 0 20px; 
+    
+    line-height: 40px;
+    padding: 0 20px;
+    background-color: #23a8f5;
+    display: inline-block;
+}
+
+.menu ul {
+    list-style: none;
+    display: block;
+    margin: 0 0 10px 0;
+    padding: 0;
+    background-color: #202020;
+    height: 100px;
+}
+.menu li {
+    display: block;
+    float: left;
+}
+.menu li a {
+    display: block;
+    float: left;
+    padding: 0 20px;
+    line-height: 40px;
+    border-right: 1px solid #101;
+    border-bottom: 1px solid #101;
+}
+.menu a:hover {
+    border-color: transparent;
+    background-color: #303030;
+}
+.cf:before, .cf:after {
+    content: " ";
+    display: table;
+}

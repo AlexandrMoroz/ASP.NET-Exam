@@ -1,0 +1,27 @@
+﻿@model IEnumerable<WebApplication2.Models.Serial>
+@using WebApplication2.Models;
+@{
+    ViewBag.Title = "TopTen";
+}
+@Styles.Render("~/Content/Index1.css")
+@Styles.Render("~/Content/Search1.css")
+<h1 class="post_title">ТОП 10 сериалов</h1>
+@foreach (var i in Model)
+{
+<div class="element">
+    <a href="/Serials/Details/@i.SerialId">
+        <img src="~/Content/Images/@i.ImagePath" class="FilmImg">
+    </a>
+    <div class="Ganers"></div>
+    <div class="MarksSelect">
+        @Ajax.RawActionLink("<div class='like'></div>", "Like", "Serials",
+                    new { id = @i.SerialId },
+                    new AjaxOptions { UpdateTargetId = "LikeCounter" + @i.SerialId }, new { })
+        <div id=@String.Format("LikeCounter{0}", @i.SerialId) class='watches'>@i.Rate</div>
+        @Ajax.RawActionLink("<div class='vote'></div>", "AddToFavorite", "Account",
+                    new { id = @i.SerialId },
+                    new AjaxOptions { OnSuccess = "FavoriteAdd" }, new { })
+    </div>
+    <div class="ElementName">@i.Name</div>
+</div>
+}

@@ -1,0 +1,145 @@
+﻿
+.But{
+	color: #fff;
+    background-color: #303030;
+    padding: 5px 0px 5px 0px;
+    text-decoration: none !important;
+    font-size: 14px;
+    line-height: 22px;
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    display: inline-block;
+    transition: all .1s;
+}
+.But:hover{
+	background-color: #8e8e8e;
+}
+.SerialDetail{
+    font-size: 20px;
+	padding-top: 5px;
+}
+.seazon {
+    font-size: 22px;
+}
+.SerialDetail tr {
+    height: 30px;
+}
+   
+.left {
+    width: 400px;
+    display: inline-block;
+    vertical-align: top;
+}
+.DetailText{
+        
+}
+
+.gaberBox {
+    display: inline-block;
+    border: 1px solid #404040;
+    padding: 3px 10px;
+    margin: 0 5px 5px 0;
+    text-decoration: none;
+}
+.gaberBox:hover{
+	background-color:  #4f4f4f;
+	border: 1px solid white;
+}
+.DetailText{
+	width: 120px;
+}
+.center{
+	width: calc(100% - 714px);
+	min-width: 400px;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 7px;
+	margin-left: 7px; 
+}
+.seazon{
+	border: 1px solid #404040;
+	padding: 0px 5px;
+   	margin: 10px 0px;
+}
+
+.SeazonNumber{
+	margin-bottom: 3px;
+}
+.epizod{
+	font-size: 10;
+}
+
+.seria {
+	border-top: 1px solid #404040;
+		height: 40px
+}
+.seria div{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.number{
+	text-align: center;
+	float: left;
+	margin: 10px auto;
+}
+.name{
+	width: 50%;
+	text-align: center;
+	float: left;
+	display: inline-block;
+	margin: 10px auto;
+}
+.date{
+	text-align: center;
+	float: left;
+	margin: 10px auto;
+}
+
+.dizlike{
+	width: 30px;
+    height: 100%;
+    position: relative;
+    float: right;
+}
+.dizlike:before{
+    background: no-repeat;
+    background-image: url(Images/sprite.png);
+    background-position: -20px -120px;
+	width: 16px;
+    height: 20px;
+    margin: 10px auto;
+    content: "";
+    display: block;
+}
+.dizlike:hover{
+	background-color: rgba(30, 150, 255,0.6);
+}
+
+.like{
+    width: 30px;
+    height: 100%;
+    position: relative;
+    float: right;
+}
+.like:before{
+    background: url(Images/sprite.png) 0 0 no-repeat;
+    background-position: -20px -100px;
+	width: 16px;
+    height: 20px;
+    margin: 10px auto;
+    content: "";
+    display: block;
+}
+.like:hover{
+	background-color: rgba(30, 150, 255,0.6);
+}
+
+.right{
+	width: 300px;
+	display: inline-block;
+}
+.H1{
+	text-align: center;
+}

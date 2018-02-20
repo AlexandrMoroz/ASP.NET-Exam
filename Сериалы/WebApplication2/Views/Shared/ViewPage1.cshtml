@@ -1,0 +1,135 @@
+﻿@using WebApplication2.Models;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    @Styles.Render("~/Content/Main.css")
+    @Styles.Render("~/Content/Login1.css")
+    @Styles.Render("~/Content/Menu.css")
+    @Scripts.Render("http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css")
+    @Scripts.Render("http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js")
+    @Scripts.Render("http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js")
+    @Scripts.Render("~/Scripts/jquery-1.10.2.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+
+</head>
+<body>
+    <header>
+
+        
+        <a href="/Serials/Index"><div class="icon MenuItem">ICON</div></a>
+        @Ajax.RawActionLink("<div class='my_serial MenuItem'>Menu</div>", "Menu", "Serials", new { }, new AjaxOptions { OnSuccess = "ShowMenu", UpdateTargetId = "menu"},new { })
+        <div class="MenuBlock" id="menu">
+        </div>
+        <div class="menu-overlay" id="Overlay" onmousedown="Hide()"></div>
+            <a href="/Serials/TopTen"><div class="top_serial MenuItem">TOP 10</div></a>
+            <a href="/Account/MySerials"><div class="my_serial MenuItem">My Serials</div></a>
+
+            <div class="searchblock">
+                <form method="get" action="~/Serials/Search">
+                    <input id="story" name="name" type="text" value="Поиск" onfocus="SearchFocus(this)" onblur="SearchUNFocus(this)" class="searchform" autocomplete="off">
+                </form>
+            </div>
+            @Html.Partial("_LoginPartial")
+</header>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#MainImg')
+                        .attr('src', e.target.result)
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function myFunction(a) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+            a.childNodes[3].classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        function ShowMenu() {
+            document.getElementById("Overlay").style.display = "block";
+            document.getElementById("menu").style.display = "block";
+        }
+        function FavoriteAdd(mes) {
+            if (mes == "") {
+                mes = "Залогинтесь";
+            }
+            alert(mes);
+        }
+        function MenuHide() {
+            document.getElementById("menu").style.display = "none";
+            document.getElementById("Overlay").style.display = "none";
+        }
+        function SingUpHide() {
+            document.getElementById("SingUpBlock").style.display = "none";
+            document.getElementById("Overlay").style.display = "none";
+        }
+        function ShowLoginForm() {
+            document.getElementById("SingUpBlock").style.display = "block";
+            document.getElementById("Overlay").style.display = "block";
+        }
+        function SearchFocus(arg) {
+            if (arg.value == 'Поиск') {
+                arg.value = '';
+            }
+        }
+        function SearchUNFocus(arg) {
+            if (arg.value == '') {
+                arg.value = 'Поиск';
+            }
+        }
+</script>
+    <footer class="footer cf">
+        <div class="about">
+        </div>
+        <div class="footer_links cf">
+            <ul>
+                <li><a href="/index.php?do=feedback">Обратная связь</a></li>
+                <li class="counter">
+
+
+                    <!-- Просто картинка -->
+                </li>
+            </ul>
+        </div>
+        <ul class="social_menu">
+            <li><a href="#" target="_blank" class="vk_icon" rel="nofollow" title="ВКонтакте"></a></li>
+            <li><a href="#" target="_blank" class="tw_icon" rel="nofollow" title="Twitter"></a></li>
+            <li><a href="#" target="_blank" class="fb_icon" rel="nofollow" title="Facebook"></a></li>
+            <li><a href="#" target="_blank" class="gp_icon" rel="nofollow" title="Google+"></a></li>
+        </ul>
+        <div class="copyrights">
+            Cериалы
+        </div>
+    </footer>
+</body>
+
+
+</html>

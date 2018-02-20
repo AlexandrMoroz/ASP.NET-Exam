@@ -1,0 +1,62 @@
+﻿@using Microsoft.AspNet.Identity
+@using WebApplication2.Models;
+
+@if (Request.IsAuthenticated)
+{
+
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+            <a href="/Manage/Index"><div class='login_btn' title='Авторизироваться'></div></a>
+            <div class="loginout_btn"><a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a></div>
+    }
+}
+else
+{
+    <a href="../Account/Register"><div class="MenuItem sing">Регистрация</div></a>
+    @*<a href="../Account/Login">*@<div class="MenuItem sing"  onmousedown="ShowLoginForm()">Войти</div>@*</a>*@
+    <div class="login_block" id="SingUpBlock">
+        <div class="menu-header">
+            Вход
+            <button class="menu-close" onmousedown="SingUpHide()"></button>
+        </div>
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login_form", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                
+                        @Html.Label("Адрес электронной почты")
+                        <input type="text" name="Email" class = "inp" />
+                       
+                        @Html.Label("Пароль")
+                        <input type="password" name="Password" class = "inp" />
+
+                        <div class="checkbox">
+                            @Html.CheckBox("RememberMe")
+                            @Html.Label("Запопнить Меня",new {@class="cheak" })
+                        </div>
+
+
+                        <input type="submit" value="Bход" class="enter-btn" />
+
+                <p>
+                    @Html.ActionLink("Регистрация", "Register","Account")
+                </p>
+                @* Включите, когда будет включено подтверждение учетной записи для функции сброса пароля
+                <p>
+                    @Html.ActionLink("Забыли пароль?", "ForgotPassword")
+                </p>*@
+        }
+        <div class="social_login">
+            <label> Войти через: </label>
+            <ul class="social_menu">
+                <li><a href="#" target="_blank" class="vk_icon" rel="nofollow" title="ВКонтакте"></a></li>
+                <li><a href="#" target="_blank" class="tw_icon" rel="nofollow" title="Twitter"></a></li>
+                <li><a href="#" target="_blank" class="fb_icon" rel="nofollow" title="Facebook"></a></li>
+                <li><a href="#" target="_blank" class="gp_icon" rel="nofollow" title="Google+"></a></li>
+            </ul>
+        </div>
+    </div>
+}

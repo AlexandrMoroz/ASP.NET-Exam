@@ -1,0 +1,39 @@
+﻿@model WebApplication2.Models.IndexViewModel
+@{
+    ViewBag.Title = "Управление";
+}
+
+<h2>@ViewBag.Title.</h2>
+@Styles.Render("~/Content/Manage.css")
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div class="Manage-main">
+    <h4>Изменение параметров учетной записи</h4>
+    <hr />
+    @if(User.IsInRole("Admin"))
+    {
+        if (Model.HasPassword)
+        {
+            <a href="/Manage/ChangePassword"><div class="enter-btn">Изменить пароль</div></a>
+        }
+        else
+        {
+            <a href="/Manage/SetPassword"><div class="enter-btn">Изменить пароль</div></a>
+        }
+        <a href="/Account/MySerials" ><div class="enter-btn">Мои Сериалы</div></a>
+        <a href="/Serials/Create"><div class="enter-btn">Создать сериал</div></a>
+        <a href="/Seazons/Create"><div class="enter-btn">Создать сeзон</div></a>
+
+    }
+    else
+    {
+        if (Model.HasPassword)
+        {
+            <a href="/Manage/ChangePassword"><div class="enter-btn">Изменить пароль</div></a>
+        }
+        else
+        {
+            <a href="/Manage/SetPassword"><div class="enter-btn">Изменить пароль</div></a>
+        }
+        <a href="/Account/MySerials"><div class="enter-btn">Мои Сериалы</div></a>
+    }
+</div>

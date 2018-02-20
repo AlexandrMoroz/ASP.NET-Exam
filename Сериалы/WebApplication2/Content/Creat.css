@@ -1,0 +1,74 @@
+﻿.left{
+	width: 400px;
+	display: inline-block;
+}
+.center{
+    margin-left: 10px;
+	width: 300px;
+	margin: 0 auto;
+    padding-left: 30px;
+	display: inline-block;
+	vertical-align: top;
+
+
+}
+.right{
+    display: inline-block;
+    width: 400px;
+    vertical-align: top;
+    padding-left: 30px;
+}
+.H1{
+	text-align: center;
+}
+#MainImg{
+	width: 400px;
+}
+.ImageForm label{
+	margin: 0 30px;
+}
+input textarea option{
+    color: black;
+}
+.form-group{
+    margin-bottom:10px;
+}
+.TextBlack{
+    color: black;
+}
+.seazons{
+    vertical-align: top;
+    display: inline-block;
+}
+.ganers{
+    vertical-align: top;
+     display: inline-block;
+}
+.enter-btn {
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    background-color: #23a8f5 !important;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 2px;
+    transition: ease 0.2s all;
+    float: left;
+}
+
+.enter-btn:hover {
+    opacity: 0.8;
+}
+.inp{
+    width: 100%;
+    border: 1px solid transparent;
+    height: 30px;
+    background-color: #fff;
+    padding: 0 0 0 10px;
+    color: #909090;
+    font-size: 14px;
+    margin: 0 0 15px 0;
+    overflow: inherit;
+}

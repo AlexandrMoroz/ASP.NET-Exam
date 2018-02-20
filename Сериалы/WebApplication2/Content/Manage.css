@@ -1,0 +1,20 @@
+﻿.enter-btn {
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    background-color: #23a8f5 !important;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 2px;
+    transition: ease 0.2s all;
+
+}
+.enter-btn:hover {
+    opacity: 0.8;
+}
+.Manage-main a {
+    text-align: center;
+    text-decoration: none;
+}

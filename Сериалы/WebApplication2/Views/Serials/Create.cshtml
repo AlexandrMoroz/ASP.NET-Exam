@@ -1,0 +1,124 @@
+﻿@model WebApplication2.Models.Serial
+@using WebApplication2.Models
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/ViewPage1.cshtml";
+    List<Seazon> seazons = ViewBag.seazons;
+    List<Ganer> ganers = ViewBag.ganers;
+}
+@Styles.Render("~/Content/Creat.css")
+<h1 class="H1">Create Serial</h1>
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+@using (Html.BeginForm("Create", "Serials", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="left">
+        <div class="ImageForm">
+            <label for="ImagePath">Choose Image</label>
+                <div class="col-md-10">
+                <img id="MainImg" src="#" alt="your image" />
+                <input type='file' name="file" id="file" onchange="readURL(this)"; class="enter-btn" style="width: 300px;" />
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "inp" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EnglishName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EnglishName, new { htmlAttributes = new { @class = "inp" } })
+                @Html.ValidationMessageFor(model => model.EnglishName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Coments, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Coments, new { htmlAttributes = new { @class = "form-control TextBlack", @rows = "20", @cols = "30" } })
+                @Html.ValidationMessageFor(model => model.Coments, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Director, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               <input name="Director" type="text" class="inp" />
+                @Html.ValidationMessageFor(model => model.Director.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Studio, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input name="Studio" type="text" class="inp" />
+                @Html.ValidationMessageFor(model => model.Studio.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.YearsOfEdition, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.YearsOfEdition, new { htmlAttributes = new { @class = "inp" } })
+                @Html.ValidationMessageFor(model => model.YearsOfEdition, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        </div>
+        <div class="right">
+            <div class="seazons">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>
+                                @Html.Label("Choose Seazons")
+                            </th>
+                        </tr>
+                        @foreach (var i in seazons)
+                        {
+                            <tr>
+                                <td class="TextBlack">
+                                    @Html.Label(i.Number.ToString())
+                                    <input type="checkbox" name="seazons" value="@i.SeazonId" />
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="ganers">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            @Html.Label("Choose ganers")
+                        </th>
+                    </tr>
+                    @foreach (var i in ganers)
+                    {  <tr>
+                            <td class="TextBlack">
+                                @Html.Label(i.Name)
+                                <input type = "checkbox" name = "ganers" value = "@i.Name" />
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table >
+    </div>
+        </div>
+        <div>
+            <div class = "enter-btn" style="display:inline-block;text-align: center;">
+                @Html.ActionLink("Back to List", "Index",new { },new { @style="text-decoration: none; text-align:center;"})
+            </div>
+            <input type="submit" value="Upload" class="enter-btn" />
+        </div>
+        
+}
+
+

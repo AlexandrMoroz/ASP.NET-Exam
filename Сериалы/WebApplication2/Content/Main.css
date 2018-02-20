@@ -1,0 +1,228 @@
+﻿header {
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+    white-space: nowrap;
+    position: fixed;
+    background-color: rgba(0,0,0,0.8);
+    min-width: 600px;
+    font-size: 20px;
+    font-weight: 100;
+}
+.MenuItem:hover {
+    background-color: #303030;
+    color: #ddd;
+}
+.icon {
+    display: block;
+    float: left;
+    text-decoration: none;
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    line-height: 20px;
+    color: #fff;
+    background-color: transparent;
+    border: 0;
+}
+.top_serial {
+    display: block;
+    float: left;
+    text-decoration: none;
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    line-height: 20px;
+    color: #fff;
+    background-color: transparent;
+    border: 0;
+    color: #f1980a;
+}
+
+.my_serial {
+    display: block;
+    float: left;
+    text-decoration: none;
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    line-height: 20px;
+    color: #fff;
+    background-color: transparent;
+    border: 0;
+}
+
+.autorize{
+	position: absolute;
+	right: 0px;
+    display: inline-block;
+}
+.sing {
+    padding: 16px;
+    float: right;
+    display: inline-block;
+    padding: 20px 20px 20px 20px;
+    line-height: 20px;
+}
+
+body {
+    background-color: #101010;
+    
+    margin: 0 auto;
+}
+
+.searchblock {
+    height: 40px;
+    width: 400px;
+    padding: 10px 0;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+.searchblock:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    width: 16px;
+    height: 16px;
+    background: url(Images/sprite.png) 0 0 no-repeat;
+    background-position: 0 -40px;
+}
+.searchform {
+    color: #fff;
+    width: 88%;
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 10px 5px 36px;
+    border: 1px solid transparent;
+    margin: 0;
+    font-size: 16px;
+    background-color: transparent;
+    overflow: hidden;
+    transition: ease 0.2s all;
+}
+.searchform:hover, .searchform:focus {
+    border-color: #23a8f5;
+    background-color: #000;
+}
+.content {
+    width: 100%;
+    padding: 60px 0;
+    overflow: hidden;
+}
+.footer {
+    font-size: 16px;
+    line-height: 150%;
+    color: #aaa;
+    padding: 20px 30px;
+}
+.cf:before, .cf:after {
+    content: " ";
+    display: table;
+}
+.about {
+    margin: 0 0 20px 0;
+}
+.footer_links {
+    float: left;
+}
+.footer_links ul {
+    list-style: none;
+}
+.footer_links li {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    line-height: 20px;
+    height: 20px;
+}
+.footer a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+.social_menu {
+    list-style: none;
+    width: 170px;
+    float: left;
+    height: 40px;
+    margin: -8px 0 0 20px;
+}
+.social_menu li {
+    color: #23a8f5;
+}
+
+.copyrights {
+    float: right;
+}
+
+.social_menu li a:before {
+    width: 40px;
+    height: 40px;
+    content: "";
+    position: relative;
+    display: block;
+    float: left;
+}
+.social_menu li a:hover {
+    background-color: rgba(255,255,255,0.5);
+    opacity: 1;
+}
+.social_menu li:first-of-type a {
+    border-left: 1px solid rgba(255,255,255,0.2);
+}
+.footer a:hover {
+    text-decoration: none;
+    color: #aaa;
+}
+.social_menu li a {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255,0.2);
+    opacity: 0.8;
+    border-left: 0;
+    transition: ease 0.2s all;
+    background: url(Images/sprite.png) 0 0 no-repeat;
+}
+.social_menu li a.vk_icon {
+    background-position: 0 -191px;
+
+}
+.social_menu li a.tw_icon {
+    background-position: 0 -270px;
+
+}
+.social_menu li a.fb_icon {
+    background-position: 0 -230px;
+}
+.social_menu li a.gp_icon {
+    background-position: 0 -310px;
+}
+.social_menu li a.gp_icon:hover {
+    background-color: #d94533;
+}
+.social_menu li a.fb_icon:hover {
+    background-color: #4862a3;
+}
+.social_menu li a.tw_icon:hover {
+    background-color: #359bed;
+}
+.social_menu li a.vk_icon:hover {
+    background-color: #4d75a3;
+}
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: 'Roboto',sans-serif;
+}
+* a{
+    text-decoration: none;
+}
+@media screen and (max-width: 1008px) {
+    .searchblock {
+        display: none;
+    }
+}
+
+

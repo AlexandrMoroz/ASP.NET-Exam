@@ -1,0 +1,37 @@
+﻿@using WebApplication2.Models;
+@model WebApplication2.Models.SearchViewModel
+@{
+
+}
+@Styles.Render("~/Content/Index1.css")
+@Styles.Render("~/Content/Search1.css")
+<h1 class="post_title">Избранное</h1>
+@if (Model.Serials.Count() != 0)
+{
+    foreach (var i in Model.Serials)
+    {
+        <div class="element">
+            <a href="/Serials/Details/@i.SerialId">
+                <img src="~/Content/Images/@i.ImagePath" class="FilmImg">
+            </a>
+            <div class="Ganers"></div>
+            <div class="MarksSelect">
+                @Ajax.RawActionLink("<div class='like'></div>", "Like", "Serials",
+                         new { id = @i.SerialId },
+                         new AjaxOptions { UpdateTargetId = "LikeCounter" + @i.SerialId }, new { })
+                <div id=@String.Format("LikeCounter{0}", @i.SerialId) class='watches'>@i.Rate</div>
+                @Ajax.RawActionLink("<div class='vote'></div>", "AddToFavorite", "Account",
+                         new { id = @i.SerialId },
+                         new AjaxOptions { OnSuccess = "FavoriteAdd" }, new { })
+            </div>
+            <div class="ElementName">@i.Name</div>
+        </div>
+    }
+}
+else
+{
+    <div class="full-story static_page">
+        <h1 class="post_title">Информация</h1>
+        <div class="info">У Вас не любимых сериалов</div>
+    </div>
+}

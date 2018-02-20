@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WebApplication2.Models.Ganer>
+<div class="menu">
+    <div class="menu_block" id="MenuBlock">
+        <div class="menu-header">
+            Что хотите посмотреть?
+            <button class="menu-close" onmousedown="MenuHide()"></button>
+        </div>
+        <div class="mblock cf">
+            <div class="menu-title">
+                <p>Сериалы</p>
+            </div>
+            <ul class="cf">
+                @foreach (var i in Model)
+                {
+                    <li><a href="/Serials/Tag/@i.GanerId">@i.Name</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

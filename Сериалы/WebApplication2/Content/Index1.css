@@ -1,0 +1,132 @@
+﻿
+.element {
+    width: 12.5%;
+    float: left;
+    margin: 0 0 4px 0;
+    float: left;
+    padding: 0 2px;
+}
+.element img{
+    width: 100%;
+}
+.element:hover .ElementName{
+	visibility: visible;
+	overflow: hidden; 
+	opacity: 1;
+}
+.MarksSelect {
+    width: 100%;
+	height:  40px;
+	background-color: rgba(0, 0, 0, 0.3);
+	position: relative;
+	top: -44px;
+    z-index: 5;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0,0,0,0.5);
+}
+.alajLink {
+    width: 30%;
+    height: 100%;
+} 
+.like {
+    width: 30%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.like:before{
+    background: url(Images/sprite.png) 0 0 no-repeat;
+    background-position: 0 -100px;
+	width: 16px;
+    height: 20px;
+    margin: 10px auto;
+    content: "";
+    display: block;
+}
+.like:hover{
+	background-color: rgba(30, 150, 255,0.6);
+}
+.like:hover:before{
+    background: url(Images/sprite.png) 0 0 no-repeat;
+    background-position: -20px -100px;
+}
+.watches{
+    width: 40%;
+    float: left;
+    line-height: 30px;
+    height: 30px;
+    padding: 5px 0;
+    font-size: 16px;
+    font-family: 'RobotoMedium',Arial,sans-serif;
+    text-align: center;
+    position: relative;
+    cursor: default;
+    color: #02e38c;
+}
+.ElementName {
+    background-color: #00b3ff;
+    color: #fff;
+    position: relative;
+    top: -44px;
+    left: 0;
+    /*width: calc(100% - 20px);*/
+    line-height: 20px;
+    max-height: 60px;
+    overflow: hidden;
+    padding: 10px;
+    font-size: 18px;
+    font-family: "RobotoRegular",Arial,sans-serif;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+     transition: ease 0.2s all;
+}
+.vote {
+    width: 30%;
+    height: 100%;
+    float: right;
+    position: relative;
+}
+.vote:hover {
+    background-color: rgba(30, 150, 255,0.6);
+}
+.vote:before {
+    background: url(Images/sprite.png) 0 0 no-repeat;
+    background-position: 0 -20px;
+    width: 16px;
+    height: 20px;
+    margin: 10px auto;
+    content: "";
+    display: block;
+}
+
+.vote:hover:before {
+    background: url(Images/sprite.png) 0 0 no-repeat;
+    background-position: -20px -20px;
+}
+@media screen and (max-width: 1600px) and (min-width: 1400px){
+    .element {
+        width: 14.2857%;
+    }
+}
+@media screen and (max-width: 1400px) and (min-width: 1200px){
+    .element {
+        width: 16.66666%;
+    }
+}
+@media screen and (max-width: 1200px) and (min-width: 1020px){
+    .element {
+        width: 20%;
+    }
+}
+@media screen and (max-width: 1020px) and (min-width: 320px) {
+    .element {
+        width: 25%;
+    }
+}
+@media screen and (max-width: 660px) {
+    .element {
+        width: 50%;
+    }
+}

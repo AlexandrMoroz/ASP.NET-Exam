@@ -1,0 +1,46 @@
+﻿@model WebApplication2.Models.SearchViewModel
+@using WebApplication2.Models;
+@{
+    ViewBag.Title = "Search";
+}
+
+@Styles.Render("~/Content/Index1.css")
+@Styles.Render("~/Content/Search1.css")
+@if (Model.Serials.Count() != 0)
+{
+    <div class="full-story static_page">
+        <h2 class="">Результат поиска</h2>
+    </div>
+    foreach (var i in Model.Serials)
+    {
+        <div class="element">
+            <a href="/Serials/Details/@i.SerialId">
+                <img src="~/Content/Images/@i.ImagePath" class="FilmImg">
+            </a>
+            <div class="Ganers"></div>
+            <div class="MarksSelect">
+                @Ajax.RawActionLink("<div class='like'></div>", "Like", "Serials",
+                    new { id = @i.SerialId },
+                    new AjaxOptions { UpdateTargetId = "LikeCounter" + @i.SerialId }, new { })
+                <div id=@String.Format("LikeCounter{0}", @i.SerialId) class='watches'>@i.Rate</div>
+                @Ajax.RawActionLink("<div class='vote'></div>", "AddToFavorite", "Account",
+                    new { id = @i.SerialId },
+                    new AjaxOptions { OnSuccess = "FavoriteAdd" }, new { })
+            </div>
+            <div class="ElementName">@i.Name</div>
+        </div>
+    }
+}
+else
+{
+    <div class="full-story static_page">
+    <h1 class="post_title">Информация</h1>
+    <div class="info">К сожалению, поиск по сайту не дал никаких результатов. Попробуйте изменить или сократить Ваш запрос.</div>
+    </div>
+
+}
+<div class="navigation-holder basecont ignore-select">
+    <div class="navigation">
+    @Html.PageLinks(Model.PageInfo, x=> Url.Action("Search", new {name=ViewBag.SearchName, page = x }))    
+    </div>
+</div>

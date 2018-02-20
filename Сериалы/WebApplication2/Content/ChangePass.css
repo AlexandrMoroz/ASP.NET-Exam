@@ -1,0 +1,35 @@
+﻿.center {
+    width: 500px;
+    margin: 15px auto;
+}
+.cheak {
+    display: inline-block;
+}
+.inp {
+    width: 100%;
+    border: 1px solid transparent;
+    height: 30px;
+    background-color: #fff;
+    padding: 0 0 0 10px;
+    color: #909090;
+    font-size: 14px;
+    margin: 0 0 15px 0;
+    overflow: inherit;
+}
+
+.enter-btn {
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    background-color: #23a8f5 !important;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: 2px;
+    transition: ease 0.2s all;
+
+}
+.enter-btn:hover {
+    opacity: 0.8;
+}

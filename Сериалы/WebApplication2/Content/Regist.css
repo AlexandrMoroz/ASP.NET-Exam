@@ -1,0 +1,21 @@
+﻿.center{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.label{
+    float:left;
+    font-size: 16px;
+}
+.table-input{
+    width: 300px;
+}
+.table-label{
+    width: 200px;
+}
+td{
+    padding:8px 0px;
+}
+.Regust-Area{
+    margin-top:10px;
+}

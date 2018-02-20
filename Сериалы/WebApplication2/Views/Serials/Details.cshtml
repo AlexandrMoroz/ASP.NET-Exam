@@ -1,0 +1,78 @@
+﻿@model WebApplication2.Models.Serial
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/ViewPage1.cshtml";
+    int counter = 1;
+}
+@Styles.Render("~/Content/Details.css")
+<div class="left">
+    <img src="~/Content/Images/@Model.ImagePath">
+    @if(User.IsInRole("admin")){ 
+    <div class="buttons">
+        <a href="/Serials/Edit/@Model.SerialId"><div class="But">Edit</div></a><a href="/Serials/Delete/@Model.SerialId"><div class="But">Delete</div></a>
+    </div>
+    }
+    <div class="SerialDetail">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="DetailText">Жанры</td> <!--Ganers-->
+                    <td>
+                        @foreach (var item in Model.SerialGaners)
+                        {
+                            <div class="gaberBox">
+                                @item.Ganer.Name
+                            </div>
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td class="DetailText">Страна</td> <!--Country-->
+                    <td>@foreach (var item in Model.Countries)
+                    {
+                        <div>
+                            @item.Name
+                        </div>
+                    }</td>
+                </tr>
+                <tr>
+                    <td class="DetailText">Время серии</td> <!--Time-->
+                    <td>@Model.Time</td>
+                </tr>
+                <tr>
+                    <td class="DetailText">Годы випуска</td> <!--Years-->
+                    <td>@Model.YearsOfEdition</td>
+                </tr>
+                <tr>
+                    <td class="DetailText">Режисер</td> <!--Director-->
+                    <td>@Model.Director.Name</td>
+                </tr>
+                <tr>
+                    <td class="DetailText">Студия</td> <!--Studio-->
+                    <td>@Model.Studio.Name</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div><div class="center">
+    <h1>@Model.Name</h1>
+    <p class="coment"></p>
+    @foreach (var item in Model.SerialSeazons)
+    {
+    <div class="seazon">
+        <h3 class="SeazonNumber">Сезон @item.Seazon.Number</h3>
+        <p class="epizod">Эпизодов: @item.Serias.Count | Просмотрено: 0</p>
+        @foreach (var i in item.Serias)
+        {
+        <div class="seria">
+            <div class="number">@item.Seazon.Number X @counter</div>
+            <div class="name">@i.Name</div>
+            <div class="date">@i.Date.ToLongDateString()</div>
+            <div class="like"></div>
+            <div class="dizlike"></div>
+        </div>
+        }
+    </div>
+    }
+</div><div class="right"></div>
+        

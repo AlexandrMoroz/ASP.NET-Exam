@@ -1,0 +1,66 @@
+﻿.left{
+	width: 400px;
+	display: inline-block;
+}
+.center{
+    margin-left: 10px;
+	width: 300px;
+	margin: 0 auto;
+    padding-left: 30px;
+	display: inline-block;
+	vertical-align: top;
+}
+.right{
+    display: inline-block;
+    width: 500px;
+    vertical-align: top;
+    padding-left: 30px;
+}
+.H1{
+	text-align: center;
+}
+#MainImg{
+	width: 400px;
+}
+.ImageForm label{
+	margin: 0 30px;
+
+}
+input textarea option{
+    color: black;
+}
+.form-group{
+    margin-bottom:10px;
+}
+
+.form-group div {
+    display: inline-block;
+    margin-left: 10px;
+}
+.form-group .enter-btn {
+    width: 190px;
+}
+.form-group div:first-child {
+    margin-left: 0px;
+} 
+.form-group a {
+    text-align:center;
+    padding-left: 40px
+}
+.TextBlack{
+    color: black;
+    vertical-align: top;
+}
+.ganers{
+    vertical-align: top;
+     display: inline-block;
+}.seazons{
+    padding-left:5px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.ListBox option{
+   color: black;
+   width:100px;
+}
